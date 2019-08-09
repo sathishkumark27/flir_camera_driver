@@ -106,12 +106,12 @@ install(TARGETS
 if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/usr/lib)
   install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/usr/lib/ DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
            PATTERN libQt* EXCLUDE)
-else()
-  get_filename_component(Spinnaker_LIB_DIR ${Spinnaker_LIBRARIES} DIRECTORY)
-  file(READ ${PROJECT_SOURCE_DIR}/cmake/install_files filenames)
-  foreach(filename ${filenames})
-    install(FILES ${Spinnaker_LIB_DIR}/${filename} DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
-  endforeach()
+#else()
+#  get_filename_component(Spinnaker_LIB_DIR ${Spinnaker_LIBRARIES} DIRECTORY)
+#  file(READ ${PROJECT_SOURCE_DIR}/cmake/install_files filenames)
+#  foreach(filename ${filenames})
+#    install(FILES ${Spinnaker_LIB_DIR}/${filename} DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+#  endforeach()
 endif()
 
 install(FILES nodelet_plugins.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION} )
